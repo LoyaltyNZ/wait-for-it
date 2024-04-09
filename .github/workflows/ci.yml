@@ -1,0 +1,15 @@
+name: Python Application CI
+
+on: [pull_request]
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      container: 
+        image: python:2.7-slim
+  
+      steps:
+      - uses: actions/checkout@v3
+      - name: Run script
+        run: python test/wait-for-it.py
+  
